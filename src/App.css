@@ -1,0 +1,225 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+.birthday-page { min-height: 100vh; overflow: hidden; position: relative; padding: 26px clamp(22px, 6vw, 96px) 70px; background: radial-gradient(circle at 80% 10%, #f4d4c1 0, transparent 27%), #f8f4ec; }
+.topbar { max-width: 1240px; margin: auto; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
+.brand { color: #293430; text-decoration: none; display: flex; align-items: center; gap: 9px; font: 500 13px 'DM Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
+.brand-mark { display: grid; place-items: center; width: 29px; height: 29px; color: #f8f4ec; background: #ef795e; border-radius: 50%; }
+.hero-section { max-width: 1240px; min-height: 600px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 5vw; position: relative; }
+.hero-copy { position: relative; z-index: 1; max-width: 590px; }
+.ui-badge { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: #293430; color: #f8f4ec; padding: 7px 12px; font: 500 11px 'DM Mono', monospace; letter-spacing: .03em; text-transform: uppercase; }
+.ui-badge-outline { background: transparent; color: #68756d; border: 1px solid #d3d0c7; }
+.eyebrow, .card-kicker { color: #ef795e; font: 500 11px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow { margin: 30px 0 13px; }
+h1, h2, p { margin-top: 0; }
+h1 { color: #293430; font: 600 clamp(58px, 8vw, 112px)/.88 'Fraunces', serif; letter-spacing: -.055em; margin-bottom: 28px; }
+h1 em { color: #ef795e; font-style: normal; }
+.hero-intro { color: #68756d; font-size: 16px; line-height: 1.7; max-width: 410px; margin-bottom: 28px; }
+.ui-button { border: 0; border-radius: 999px; padding: 13px 18px 13px 21px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+.ui-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #29343020; }
+.ui-button-default { background: #293430; color: #fffaf2; }
+.ui-button-outline { background: transparent; color: #293430; border: 1px solid #c4c6b9; }
+.ui-button-ghost { background: transparent; color: #293430; }
+.cake-stage { height: 530px; position: relative; display: grid; place-items: center; }
+.sunburst { width: min(40vw, 440px); aspect-ratio: 1; background: #f4d4c1; border-radius: 50%; position: absolute; }
+.cake { width: 220px; position: relative; z-index: 1; margin-top: 80px; }
+.cake-body { height: 130px; background: #ef795e; border-radius: 16px 16px 35px 35px; border-bottom: 15px solid #d85f4b; position: relative; overflow: hidden; box-shadow: 0 16px 0 #29343015; }
+.cake-body::before { content: ''; position: absolute; top: -1px; left: -5%; width: 110%; height: 28px; background: #fffaf2; border-radius: 50%; }
+.cake-body span { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #f8ce73; margin: 53px 7px 0; }
+.cake-top { height: 64px; width: 192px; display: grid; place-items: center; color: #ef795e; background: #fffaf2; border: 7px solid #f8ce73; border-radius: 50%; position: absolute; top: -31px; left: 14px; z-index: 2; }
+.candle { width: 15px; height: 67px; background: repeating-linear-gradient(135deg, #ef795e 0 5px, #fffaf2 5px 10px); position: absolute; top: -91px; left: 103px; border-radius: 4px 4px 1px 1px; }
+.candle span { width: 14px; height: 22px; background: #f8ce73; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); position: absolute; top: -19px; left: 0; box-shadow: 0 0 16px #f8ce73; }
+.cake-plate { position: absolute; width: 300px; height: 23px; border-radius: 50%; background: #293430; bottom: 101px; }
+.sparkle { color: #e3a844; position: absolute; z-index: 2; }.sparkle-a { top: 115px; left: 15%; }.sparkle-b { right: 10%; top: 33%; color: #ef795e; }.cake-caption { color: #68756d; font: 500 11px 'DM Mono', monospace; letter-spacing: .15em; text-transform: uppercase; position: absolute; bottom: 38px; }
+.wish-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; position: relative; z-index: 1; }
+.ui-card { background: #fffaf2; border: 1px solid #e5ded2; border-radius: 15px; box-shadow: 0 15px 40px #2934300b; }
+.ui-card-header { padding: 27px 28px 0; }.ui-card-content { padding: 14px 28px 27px; }
+.ui-card h2 { font: 500 27px/1.15 'Fraunces', serif; color: #293430; margin: 12px 0 0; max-width: 490px; }
+.message-card { background: #293430; border-color: #293430; color: #e9e8df; }.message-card h2 { color: #fffaf2; }.message-card .card-kicker { color: #f8ce73; }.message-card .ui-card-content > p { max-width: 490px; line-height: 1.65; color: #bfc7bd; font-size: 14px; }
+.signature { color: #f8ce73; display: flex; align-items: center; gap: 7px; margin-top: 23px; font: 500 12px 'DM Mono', monospace; }
+.list-card ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 13px; color: #68756d; font-size: 14px; }.list-card li { display: flex; align-items: center; gap: 10px; }.list-card li span { display: grid; place-items: center; width: 22px; height: 22px; color: #fffaf2; background: #ef795e; border-radius: 50%; }
+.confetti { position: absolute; width: 9px; height: 26px; background: #f8ce73; transform: rotate(28deg); }.confetti-one { top: 29%; right: 4%; }.confetti-two { top: 60%; left: 3%; background: #ef795e; transform: rotate(-32deg); }
+.surprise { position: fixed; inset: 0; display: grid; place-items: center; padding: 20px; background: #293430aa; z-index: 5; }.surprise-card { max-width: 470px; width: 100%; padding: 43px; position: relative; text-align: center; }.surprise-icon { color: #ef795e; margin-bottom: 22px; }.surprise-card .eyebrow { margin: 0 0 11px; }.surprise-card h2 { font-size: 40px; margin: 0 0 15px; }.surprise-card p:not(.eyebrow) { color: #68756d; line-height: 1.6; font-size: 14px; margin-bottom: 23px; }.close-button { position: absolute; top: 14px; right: 18px; border: 0; background: transparent; color: #68756d; cursor: pointer; font-size: 25px; }
+@media (max-width: 760px) { .birthday-page { padding: 20px 18px 45px; }.topbar .ui-badge { font-size: 9px; padding: 6px 8px; }.hero-section { grid-template-columns: 1fr; min-height: auto; margin-top: 60px; }.hero-copy { text-align: center; margin: auto; }.hero-intro { margin-left: auto; margin-right: auto; }.cake-stage { height: 390px; margin-top: -5px; }.sunburst { width: 310px; }.cake { transform: scale(.8); margin-top: 40px; }.cake-plate { bottom: 47px; }.cake-caption { bottom: 0; }.wish-grid { grid-template-columns: 1fr; }.ui-card-header { padding: 23px 22px 0; }.ui-card-content { padding: 13px 22px 23px; } h1 { font-size: 70px; } }
